@@ -5,11 +5,19 @@
     min-height: 600px;
 
     &Main {
+        background: url('/bg/screen_1_bg.jpg') center no-repeat no-repeat;
+    }
+
+    &Earth {
+        background: url('/bg/screen_2_bg.jpg') center no-repeat no-repeat;
+    }
+
+    &Main,
+    &Earth {
         display: flex;
         align-items: center;
         padding-top: 7.1429rem;
         padding-bottom: 7.1429rem;
-        background: url('/bg/screen_1_bg.jpg') center no-repeat no-repeat;
         background-size: cover;
     }
 }
