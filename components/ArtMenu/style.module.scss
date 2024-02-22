@@ -115,6 +115,15 @@
 .cardList {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px;
+    gap: 0px 40px;
 
+    *:nth-child(2n) {
+        margin-top: 40px;
+    }
+}
+
+.modal {
+    &Text {
+        margin-bottom: 100px;
+    }
 }

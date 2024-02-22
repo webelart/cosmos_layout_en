@@ -2,10 +2,33 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     position: relative;
-    background: white;
+    background: rgba(255, 255, 255, 0.27);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to left bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)) 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &Image {
         position: absolute;
-        max-width: 100%;
+        max-width: 77%;
+    }
+}
+
+.dark {
+    
+    img {
+        transition: all 0.3s;
+        filter: brightness(10%);
+    }
+
+    &:hover {
+        img {
+            filter: brightness(100%);
+        }
     }
 }

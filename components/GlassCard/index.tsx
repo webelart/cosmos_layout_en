@@ -1,5 +1,3 @@
-
-import Link from 'next/link';
 import cl from 'classnames';
 
 import styles from './style.module.scss';
@@ -13,7 +11,7 @@ export const GlassCard: React.FC<GlassCardProps> = ({
     imageUrl,
     type
 }) => (
-    <div className={cl(styles.classCard, type)}>
+    <div className={cl(styles.classCard, styles[type])}>
         <img src={imageUrl} alt="Card" className={styles.classCardImage} />
     </div>
 );

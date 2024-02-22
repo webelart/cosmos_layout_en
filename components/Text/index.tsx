@@ -1,13 +1,16 @@
+import cl from 'classnames';
 import styles from './style.module.scss';
 
 interface TextProps {
   children: React.ReactNode;
+  className: string;
 }
 
 export const Text: React.FC<TextProps> = ({
-  children
+  children,
+  className
 }) => (
-	<div className={styles.text}>
+	<div className={cl(className, styles.text)}>
 		{children}
 	</div>
 );

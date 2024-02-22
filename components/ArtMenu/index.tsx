@@ -258,7 +258,7 @@ export const ArtMenu: React.FC = () => {
                 onClickNext={() => {}}
             >
                 <ArtTitle>BadLands</ArtTitle>
-                <Text>{modalInfo.content}</Text>
+                <Text className={styles.modalText}>{modalInfo.content}</Text>
                 <div className={styles.cardList}>
                     {modalInfo.listImages.map((item, id) => (
                         <GlassCard
