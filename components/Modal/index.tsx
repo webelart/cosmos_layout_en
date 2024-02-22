@@ -24,8 +24,6 @@ export const Modal: React.FC<ModalProps> = ({
 		}
 	}, []);
 
-	console.log(backgroundUrl)
-
   	return (
 		<div
 			className={styles.modal}
@@ -33,15 +31,17 @@ export const Modal: React.FC<ModalProps> = ({
 				backgroundImage:`url(${backgroundUrl})`,
 			}}
 		>
-			<header className={styles.modalHeader}>
-				<ArtButton onClick={onClickClose} type="Transparent">
-					Close
-				</ArtButton>
-				<ArtButton onClick={onClickNext} type="White">
-					Next
-				</ArtButton>
-			</header>
-			{children}
+			<div className={styles.modalScroll}>
+				<header className={styles.modalHeader}>
+					<ArtButton onClick={onClickClose} type="Transparent">
+						Close
+					</ArtButton>
+					<ArtButton onClick={onClickNext} type="White">
+						Next
+					</ArtButton>
+				</header>
+				{children}
+			</div>
 		</div>
   	);
 }

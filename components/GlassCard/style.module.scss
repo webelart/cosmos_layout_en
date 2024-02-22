@@ -1,0 +1,11 @@
+.classCard {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    background: white;
+
+    &Image {
+        position: absolute;
+        max-width: 100%;
+    }
+}
