@@ -1,6 +1,9 @@
 import { useState } from 'react';
 
 import { ArtMenuItem } from './ArtMenuItem';
+import { ArtTitle } from '../ArtTitle';
+import { Modal } from '../Modal';
+import { Text } from '../Text';
 import styles from './style.module.scss';
 
 interface ArtMenuProps {}
@@ -15,11 +18,11 @@ const links = [
         modalInfo: {
             title: 'Badlands',
             content: (
-                <div>
+                <>
                     <p>Modern-day Dusktopia begins here</p>
                     <p>The first thing that counts here is survival Only then can you think of profit; then finally domination</p>
                     <p>Forge your alliances with the EON Corporation, the rival mafia gangs, or even an utterly corrupt police force - and crush all standing in your way</p>
-                </div>
+                </>
             ),
             coverImage: '/images/badlands/modal_image.jpg',
             listImages: [
@@ -35,15 +38,16 @@ const links = [
         href: '/',
         title: 'Glacial Frontier',
         image: '/images/glacial_frontier/preview.jpg',
+
         active: false,
         modalInfo: {
             title: 'Glacial Frontier',
             content: (
-                <div>
+                <>
                     <p>The home of everything warfare in Dusktopia</p>
                     <p>Mercenaries and soldiers take payouts from the Cabal to do its bidding - but some want more for themselves, and are willing to go against power itself to get it</p>
                     <p>Which side are you joining?</p>
-                </div>
+                </>
             ),
             coverImage: '/images/glacial_frontier/modal_cover.jpg',
             listImages: [
@@ -63,12 +67,12 @@ const links = [
         modalInfo: {
             title: 'Glacial Frontier',
             content: (
-                <div>
+                <>
                     <p>Dusktopia’s last remaining sanctuary of peace</p>
                     <p>Researchers and scientists congregate here to live in religious pacifism, spending their time developing a renewable energy source for the world</p>
                     <p>A small faction wants more - selling Aurium on the black market for their own personal gain</p>
                     <p>Will you root out the traitors or join them?</p>
-                </div>
+                </>
             ),
             coverImage: '/images/sundered_grove/modal_cover.jpg',
             listImages: [
@@ -88,11 +92,11 @@ const links = [
         modalInfo: {
             title: 'Sky Citadel',
             content: (
-                <div>
+                <>
                     <p>These are where the apex predators in Dusktopia reside</p>
                     <p>The political and economic masters of all society: living high above the suffering of ordinary denizens, and calmly plot elevated pursuits like space colonization in absolute peace</p>
                     <p>If you’re lucky enough to be part of it, hold on tight - everybody wants what you have</p>
-                </div>
+                </>
             ),
             coverImage: '/images/sky_citadel/modal_cover.jpg',
             listImages: [
@@ -107,21 +111,33 @@ const links = [
 
 export const ArtMenu: React.FC<ArtMenuProps> = () => {
     const [ openedId, setOpenedId ] = useState(0);
+    const modalInfo = links[0].modalInfo;
+    console.log(modalInfo)
+
     return (
-        <div
-            className={styles.artMenu}
-        >
-            {links.map((link) => (
-                <ArtMenuItem
-                    key={link.id}
-                    onClick={(event) => {
-                        event.preventDefault();
-                        setOpenedId(link.id !== openedId ? link.id : 0);
-                    }}
-                    isOpened={link.id === openedId}
-                    {...link}
-                />
-            ))}
-        </div>
+        <>
+            <div className={styles.artMenu}>
+                {links.map((link) => (
+                    <ArtMenuItem
+                        key={link.id}
+                        onClick={(event) => {
+                            event.preventDefault();
+                            setOpenedId(link.id !== openedId ? link.id : 0);
+                        }}
+                        isOpened={link.id === openedId}
+                        {...link}
+                    />
+                ))}
+            </div>
+            <Modal
+                backgroundUrl={modalInfo.coverImage}
+                onClickClose={() => {}}
+                onClickNext={() => {}}
+            >
+                <ArtTitle>BadLands</ArtTitle>
+                <Text>{modalInfo.content}</Text>
+            </Modal>
+        </>
     )
 }
+

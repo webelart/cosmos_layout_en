@@ -3,7 +3,7 @@ import cl from 'classnames';
 
 import styles from './style.module.scss';
 
-export type TypeArtButton = 'BluePurple' | 'GreenYellow' | 'Blue' | 'YellowPink';
+export type TypeArtButton = 'BluePurple' | 'GreenYellow' | 'Blue' | 'YellowPink' | 'Transparent' | 'White';
 
 interface ArtButtonProps {
     onClick: () => void;

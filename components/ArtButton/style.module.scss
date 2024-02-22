@@ -129,6 +129,30 @@ $size-border: 2px;
         }
     }
 
+    &Transparent {
+        color: white;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    &White {
+        color: black;
+
+        &::after {
+            background: white;
+        }
+
+        &:hover {
+            color: white;
+
+            &::after {
+                background: none;
+            }
+        }
+    }
+
     &YellowPink {
         &::after {
             background: linear-gradient(to right, #f4bb42 0%,#f5bdc4 100%) !important;

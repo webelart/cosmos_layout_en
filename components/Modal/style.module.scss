@@ -1,0 +1,18 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #091419;
+  z-index: 999;
+  padding: 50px;
+
+  &Header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+}
+
