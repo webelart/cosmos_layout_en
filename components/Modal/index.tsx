@@ -7,14 +7,18 @@ interface ModalProps {
   backgroundUrl:  string;
   onClickClose: () => void;
   onClickNext: () => void;
-  children: ReactNode;
+  title: ReactNode;
+  text: ReactNode;
+  scrollContent: ReactNode;
 }
 
 export const Modal: React.FC<ModalProps> = ({
   backgroundUrl,
   onClickClose,
   onClickNext,
-  children,
+  title,
+  text,
+  scrollContent,
 }) => {
 	useEffect(() => {
 		document.body.classList.add('bodyOverflow');
@@ -31,16 +35,42 @@ export const Modal: React.FC<ModalProps> = ({
 				backgroundImage:`url(${backgroundUrl})`,
 			}}
 		>
-			<div className={styles.modalScroll}>
+			<div className={styles.modalContainer}>
 				<header className={styles.modalHeader}>
-					<ArtButton onClick={onClickClose} type="Transparent">
+					<ArtButton
+						onClick={onClickClose}
+						type="Transparent"
+						className={styles.modalButton}
+					>
 						Close
 					</ArtButton>
-					<ArtButton onClick={onClickNext} type="White">
-						Next
+					<ArtButton
+						onClick={onClickNext}
+						type="White"
+						className={styles.modalButton}
+					>
+						<span>Next</span>
+						<svg
+							width="26"
+							height="12"
+							viewBox="0 0 26 12"
+							fill="none"
+							className={styles.modalArrow}
+						>
+							<path
+								d="M1 6H24.5M24.5 6L19.5 1M24.5 6L19.5 11"
+								stroke="black"
+								strokeWidth="1.5"
+								strokeLinecap="round"
+							/>
+						</svg>
 					</ArtButton>
 				</header>
-				{children}
+				{title}
+				{text}
+				<div className={styles.modalScroll}>
+					{scrollContent}
+				</div>
 			</div>
 		</div>
   	);

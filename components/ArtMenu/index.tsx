@@ -256,19 +256,20 @@ export const ArtMenu: React.FC = () => {
                 backgroundUrl={modalInfo.coverImage}
                 onClickClose={() => {}}
                 onClickNext={() => {}}
-            >
-                <ArtTitle type="sliced">BadLands</ArtTitle>
-                <Text className={styles.modalText}>{modalInfo.content}</Text>
-                <div className={styles.cardList}>
-                    {modalInfo.listImages.map((item, id) => (
-                        <GlassCard
-                            key={id}
-                            type={item.type}
-                            imageUrl={item.src}
-                        />
-                    ))}
-                </div>
-            </Modal>
+                title={<ArtTitle type="sliced">BadLands</ArtTitle>}
+                text={<Text>{modalInfo.content}</Text>}
+                scrollContent={
+                    <div className={styles.cardList}>
+                        {modalInfo.listImages.map((item, id) => (
+                            <GlassCard
+                                key={id}
+                                type={item.type}
+                                imageUrl={item.src}
+                            />
+                        ))}
+                    </div>
+                }
+            />
         </>
     )
 }

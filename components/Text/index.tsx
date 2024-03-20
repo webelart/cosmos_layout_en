@@ -3,7 +3,7 @@ import styles from './style.module.scss';
 
 interface TextProps {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }
 
 export const Text: React.FC<TextProps> = ({

@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 
     &Image {
         position: absolute;
@@ -20,7 +21,6 @@
 }
 
 .dark {
-    
     img {
         transition: all 0.3s;
         filter: brightness(10%);

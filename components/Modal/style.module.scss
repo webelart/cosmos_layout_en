@@ -6,20 +6,38 @@
   bottom: 0;
   background: #091419;
   z-index: 999;
-  overflow-x: auto;
   background-size: cover;
 
   &Header {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;
   }
 
-  &Scroll {
+  &Container {
     min-width: 900px;
     padding: 50px;
     box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    gap: 20px;
+    max-height: 100vh;
+    padding-bottom: 0;
+  }
+
+  &Button {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  &Arrow {
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  &Scroll {
+    overflow-y: scroll;
+    padding-bottom: 50px;
   }
 }
 
