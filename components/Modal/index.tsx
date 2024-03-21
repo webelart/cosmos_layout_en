@@ -5,9 +5,10 @@ import styles from './style.module.scss';
 
 interface ModalProps {
   backgroundUrl:  string;
+  titleUrl: string;
   onClickClose: () => void;
   onClickNext: () => void;
-  title: ReactNode;
+  title: string;
   text: ReactNode;
   scrollContent: ReactNode;
   isNext: boolean;
@@ -15,6 +16,7 @@ interface ModalProps {
 
 export const Modal: React.FC<ModalProps> = ({
   backgroundUrl,
+  titleUrl,
   onClickClose,
   onClickNext,
   title,
@@ -22,6 +24,7 @@ export const Modal: React.FC<ModalProps> = ({
   scrollContent,
   isNext,
 }) => {
+	
 	useEffect(() => {
 		document.body.classList.add('bodyOverflow');
 
@@ -70,7 +73,12 @@ export const Modal: React.FC<ModalProps> = ({
 						</ArtButton>
 					)}
 				</header>
-				{title}
+				<h2
+					style={{
+						backgroundImage: `url(${titleUrl})`,
+					}}
+					className={styles.modalTitle}
+				>{title}</h2>
 				{text}
 				<div className={styles.modalScroll}>
 					{scrollContent}

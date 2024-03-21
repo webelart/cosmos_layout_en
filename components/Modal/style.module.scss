@@ -8,6 +8,21 @@
   z-index: 999;
   background-size: cover;
 
+  &Title {
+    font-family: "TTOctosquares";
+    font-size: 6vw;
+    font-weight: 500;
+    line-height: 1.2;
+    max-width: 848px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    background-repeat: no-repeat;
+    background-position: left center;
+    text-indent: -1234em;
+    margin: 30px 0 20px;
+    background-size: contain;
+  }
+
   &Header {
     width: 100%;
     display: flex;

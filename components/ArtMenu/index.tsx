@@ -1,7 +1,6 @@
 import { useMemo, useState, ReactNode } from 'react';
 
 import { ArtMenuItem } from './ArtMenuItem';
-import { ArtTitle } from '../ArtTitle';
 import { Modal } from '../Modal';
 import { Text } from '../Text';
 import { GlassCard } from '../GlassCard';
@@ -9,6 +8,7 @@ import styles from './style.module.scss';
 
 interface ModalInfo {
     title: string;
+    titleUrl: string;
     content: ReactNode;
     coverImage: string;
     listImages: {
@@ -42,6 +42,7 @@ const links: ArtMenuLinks[] = [
                     <p>Forge your alliances with the EON Corporation, the rival mafia gangs, or even an utterly corrupt police force - and crush all standing in your way</p>
                 </>
             ),
+            titleUrl: '/images/badlands/title.png',
             coverImage: '/images/badlands/modal_cover.jpg',
             listImages: [
                 {
@@ -84,6 +85,7 @@ const links: ArtMenuLinks[] = [
         active: false,
         modalInfo: {
             title: 'Glacial Frontier',
+            titleUrl: '/images/glacial_frontier/title.png',
             content: (
                 <>
                     <p>The home of everything warfare in Dusktopia</p>
@@ -136,6 +138,7 @@ const links: ArtMenuLinks[] = [
         active: false,
         modalInfo: {
             title: 'Sundered Grove',
+            titleUrl: '/images/sundered_grove/title.png',
             content: (
                 <>
                     <p>Dusktopia’s last remaining sanctuary of peace</p>
@@ -189,6 +192,7 @@ const links: ArtMenuLinks[] = [
         active: false,
         modalInfo: {
             title: 'Sky Citadel',
+            titleUrl: '/images/sky_citadel/title.png',
             content: (
                 <>
                     <p>These are where the apex predators in Dusktopia reside</p>
@@ -278,7 +282,8 @@ export const ArtMenu: React.FC = () => {
                     backgroundUrl={modalInfo.coverImage}
                     onClickClose={() => setModalInfo(null)}
                     onClickNext={() => setModalInfo(nextModalInfo)}
-                    title={<ArtTitle type="sliced">{modalInfo.title}</ArtTitle>}
+                    titleUrl={modalInfo.titleUrl}
+                    title={modalInfo.title}
                     text={<Text>{modalInfo.content}</Text>}
                     scrollContent={
                         <div className={styles.cardList}>
