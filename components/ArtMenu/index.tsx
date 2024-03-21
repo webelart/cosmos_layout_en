@@ -284,7 +284,7 @@ export const ArtMenu: React.FC = () => {
                     onClickNext={() => setModalInfo(nextModalInfo)}
                     titleUrl={modalInfo.titleUrl}
                     title={modalInfo.title}
-                    text={<Text>{modalInfo.content}</Text>}
+                    text={modalInfo.content}
                     scrollContent={
                         <div className={styles.cardList}>
                             {modalInfo.listImages.map((item, id) => (

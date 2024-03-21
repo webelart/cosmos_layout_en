@@ -1,5 +1,6 @@
 import { useEffect, ReactNode } from 'react';
 import { ArtButton } from '../ArtButton';
+import { Text } from '../Text';
 
 import styles from './style.module.scss';
 
@@ -44,7 +45,7 @@ export const Modal: React.FC<ModalProps> = ({
 				<header className={styles.modalHeader}>
 					<ArtButton
 						onClick={onClickClose}
-						type="White"
+						type="Transparent"
 						className={styles.modalButton}
 					>
 						Close
@@ -65,7 +66,7 @@ export const Modal: React.FC<ModalProps> = ({
 							>
 								<path
 									d="M1 6H24.5M24.5 6L19.5 1M24.5 6L19.5 11"
-									stroke="white"
+									stroke="black"
 									strokeWidth="1.5"
 									strokeLinecap="round"
 								/>
@@ -79,7 +80,9 @@ export const Modal: React.FC<ModalProps> = ({
 					}}
 					className={styles.modalTitle}
 				>{title}</h2>
-				{text}
+				<Text
+					className={styles.modalText}
+				>{text}</Text>
 				<div className={styles.modalContent}>
 					{scrollContent}
 				</div>

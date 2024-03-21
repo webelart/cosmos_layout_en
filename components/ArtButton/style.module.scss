@@ -139,7 +139,7 @@ $size-border: 2px;
         }
     }
 
-    &White {
+    &Transparent {
         color: white;
 
         &:hover {
@@ -152,6 +152,18 @@ $size-border: 2px;
             &::after {
                 background: none;
             }
+        }
+    }
+
+    &White {
+        color: black;
+
+        &::after {
+            background: white;
+        }
+
+        &:hover {
+            opacity: 0.7;
         }
     }
 
