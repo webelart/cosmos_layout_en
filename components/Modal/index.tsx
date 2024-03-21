@@ -10,6 +10,7 @@ interface ModalProps {
   title: ReactNode;
   text: ReactNode;
   scrollContent: ReactNode;
+  isNext: boolean;
 }
 
 export const Modal: React.FC<ModalProps> = ({
@@ -19,6 +20,7 @@ export const Modal: React.FC<ModalProps> = ({
   title,
   text,
   scrollContent,
+  isNext,
 }) => {
 	useEffect(() => {
 		document.body.classList.add('bodyOverflow');
@@ -44,27 +46,29 @@ export const Modal: React.FC<ModalProps> = ({
 					>
 						Close
 					</ArtButton>
-					<ArtButton
-						onClick={onClickNext}
-						type="White"
-						className={styles.modalButton}
-					>
-						<span>Next</span>
-						<svg
-							width="26"
-							height="12"
-							viewBox="0 0 26 12"
-							fill="none"
-							className={styles.modalArrow}
+					{isNext && (
+						<ArtButton
+							onClick={onClickNext}
+							type="White"
+							className={styles.modalButton}
 						>
-							<path
-								d="M1 6H24.5M24.5 6L19.5 1M24.5 6L19.5 11"
-								stroke="black"
-								strokeWidth="1.5"
-								strokeLinecap="round"
-							/>
-						</svg>
-					</ArtButton>
+							<span>Next</span>
+							<svg
+								width="26"
+								height="12"
+								viewBox="0 0 26 12"
+								fill="none"
+								className={styles.modalArrow}
+							>
+								<path
+									d="M1 6H24.5M24.5 6L19.5 1M24.5 6L19.5 11"
+									stroke="black"
+									strokeWidth="1.5"
+									strokeLinecap="round"
+								/>
+							</svg>
+						</ArtButton>
+					)}
 				</header>
 				{title}
 				{text}

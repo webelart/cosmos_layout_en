@@ -1,4 +1,4 @@
-import { useState, ReactNode } from 'react';
+import { useMemo, useState, ReactNode } from 'react';
 
 import { ArtMenuItem } from './ArtMenuItem';
 import { ArtTitle } from '../ArtTitle';
@@ -7,21 +7,23 @@ import { Text } from '../Text';
 import { GlassCard } from '../GlassCard';
 import styles from './style.module.scss';
 
+interface ModalInfo {
+    title: string;
+    content: ReactNode;
+    coverImage: string;
+    listImages: {
+        src: string;
+        type: 'color' | 'dark';
+    }[]
+}
+
 interface ArtMenuLinks {
     id: number;
     href: string;
     title: string;
     image: string;
     active: boolean;
-    modalInfo: {
-        title: string;
-        content: ReactNode;
-        coverImage: string;
-        listImages: {
-            src: string;
-            type: 'color' | 'dark';
-        }[]
-    }
+    modalInfo: ModalInfo;
 }
 
 const links: ArtMenuLinks[] = [
@@ -133,7 +135,7 @@ const links: ArtMenuLinks[] = [
         image: '/images/sundered_grove/preview.jpg',
         active: false,
         modalInfo: {
-            title: 'Glacial Frontier',
+            title: 'Sundered Grove',
             content: (
                 <>
                     <p>Dusktopia’s last remaining sanctuary of peace</p>
@@ -235,7 +237,22 @@ const links: ArtMenuLinks[] = [
 
 export const ArtMenu: React.FC = () => {
     const [ openedId, setOpenedId ] = useState(0);
-    const modalInfo = links[0].modalInfo;
+    const [ modalInfo, setModalInfo ] = useState<ModalInfo | null>(null);
+    const nextModalInfo = useMemo<ModalInfo | null>(() => {
+        if (!modalInfo) return null;
+        let nextModalInfo = null;
+        for (let i = 0; i < links.length; i++) {
+            if (
+                links[i].modalInfo.title === modalInfo.title
+                && links[i + 1]
+            ) {
+                nextModalInfo = links[i + 1].modalInfo;
+                break;
+            }
+        }
+
+        return nextModalInfo;
+    }, [modalInfo]);
 
     return (
         <>
@@ -247,29 +264,35 @@ export const ArtMenu: React.FC = () => {
                             event.preventDefault();
                             setOpenedId(link.id !== openedId ? link.id : 0);
                         }}
+                        onClickButton={() => {
+                            setModalInfo(link.modalInfo);
+                        }}
                         isOpened={link.id === openedId}
                         {...link}
                     />
                 ))}
             </div>
-            <Modal
-                backgroundUrl={modalInfo.coverImage}
-                onClickClose={() => {}}
-                onClickNext={() => {}}
-                title={<ArtTitle type="sliced">BadLands</ArtTitle>}
-                text={<Text>{modalInfo.content}</Text>}
-                scrollContent={
-                    <div className={styles.cardList}>
-                        {modalInfo.listImages.map((item, id) => (
-                            <GlassCard
-                                key={id}
-                                type={item.type}
-                                imageUrl={item.src}
-                            />
-                        ))}
-                    </div>
-                }
-            />
+            {modalInfo && (
+                <Modal
+                    isNext={!!nextModalInfo}
+                    backgroundUrl={modalInfo.coverImage}
+                    onClickClose={() => setModalInfo(null)}
+                    onClickNext={() => setModalInfo(nextModalInfo)}
+                    title={<ArtTitle type="sliced">{modalInfo.title}</ArtTitle>}
+                    text={<Text>{modalInfo.content}</Text>}
+                    scrollContent={
+                        <div className={styles.cardList}>
+                            {modalInfo.listImages.map((item, id) => (
+                                <GlassCard
+                                    key={id}
+                                    type={item.type}
+                                    imageUrl={item.src}
+                                />
+                            ))}
+                        </div>
+                    }
+                />
+            )}
         </>
     )
 }

@@ -13,6 +13,7 @@ interface ArtMenuItemProps {
     image: string;
     isOpened: boolean;
     onClick: (event: React.MouseEvent) => void;
+    onClickButton: () => void;
 }
 
 const getTypeById = (id: number): TypeArtButton => {
@@ -37,7 +38,8 @@ export const ArtMenuItem: React.FC<ArtMenuItemProps> = ({
     image,
     title,
     isOpened,
-    onClick
+    onClick,
+    onClickButton
 }) => (
     <Link
         href={href}
@@ -54,7 +56,7 @@ export const ArtMenuItem: React.FC<ArtMenuItemProps> = ({
         )}>
             <ArtButton
                 type={getTypeById(id)}
-                onClick={() => {}}
+                onClick={onClickButton}
                 className={styles.cardMoreButton}
             >
                 More
