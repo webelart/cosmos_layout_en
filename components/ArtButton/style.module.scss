@@ -140,15 +140,15 @@ $size-border: 2px;
     }
 
     &White {
-        color: black;
-
-        &::after {
-            background: white;
-        }
+        color: white;
 
         &:hover {
-            color: white;
+            opacity: 0.7;
 
+            .artButtonText {
+                color: white;
+            }
+        
             &::after {
                 background: none;
             }

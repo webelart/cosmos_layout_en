@@ -44,7 +44,7 @@ export const Modal: React.FC<ModalProps> = ({
 				<header className={styles.modalHeader}>
 					<ArtButton
 						onClick={onClickClose}
-						type="Transparent"
+						type="White"
 						className={styles.modalButton}
 					>
 						Close
@@ -65,7 +65,7 @@ export const Modal: React.FC<ModalProps> = ({
 							>
 								<path
 									d="M1 6H24.5M24.5 6L19.5 1M24.5 6L19.5 11"
-									stroke="black"
+									stroke="white"
 									strokeWidth="1.5"
 									strokeLinecap="round"
 								/>
@@ -80,7 +80,7 @@ export const Modal: React.FC<ModalProps> = ({
 					className={styles.modalTitle}
 				>{title}</h2>
 				{text}
-				<div className={styles.modalScroll}>
+				<div className={styles.modalContent}>
 					{scrollContent}
 				</div>
 			</div>

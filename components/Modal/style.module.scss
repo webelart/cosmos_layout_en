@@ -7,6 +7,7 @@
   background: #091419;
   z-index: 999;
   background-size: cover;
+  overflow-y: auto;
 
   &Title {
     font-family: "TTOctosquares";
@@ -37,7 +38,10 @@
     grid-template-rows: auto auto auto 1fr;
     gap: 20px;
     max-height: 100vh;
-    padding-bottom: 0;
+  }
+
+  &Content {
+    padding-bottom: 50px;
   }
 
   &Button {
@@ -48,11 +52,6 @@
   &Arrow {
     display: inline-block;
     margin-left: 10px;
-  }
-
-  &Scroll {
-    overflow-y: auto;
-    padding-bottom: 50px;
   }
 }
 
