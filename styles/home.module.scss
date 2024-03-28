@@ -14,7 +14,7 @@
             position: absolute;
             z-index: 1;
             bottom: 0;
-            background: linear-gradient(to top,  rgb(255, 255, 255) 0%,rgba(255,255,255,0) 70%,rgba(82,67,81,0) 40%);
+            background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 70%,rgba(82,67,81,0) 40%);
             left: 0;
         }
     }
@@ -34,6 +34,8 @@
     }
 
     &Animation {
+        min-height: 100vh;
+        height: auto;
         position: relative;
         background: linear-gradient(
             to bottom,  

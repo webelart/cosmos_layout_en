@@ -1,0 +1,138 @@
+$size-height: 1rem;
+$size-top: 5rem;
+$size-bottom: 7rem;
+$size-border: 2px;
+
+.animatedMenu {
+    position: relative;
+    z-index: 2;
+
+    &Item {
+        position: relative;
+        width: 35vw;
+        padding: 4rem 3rem;
+        margin-bottom: 50px;
+        cursor: pointer;
+        transition: transform 0.3s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: block;
+            z-index: 0;
+            transition: all 0.3s;
+            clip-path: polygon(
+                0 0,
+                $size-top 0,
+                $size-bottom $size-height,
+                100% $size-height,
+                100% calc(100% - $size-height),
+                100% calc(100% - $size-height),
+                calc(100% - $size-top) calc(100% - $size-height),
+                calc(100% - $size-bottom) 100%,
+                0 100%,
+            );
+            background: radial-gradient(
+                ellipse at center,
+                #4EFFDF 0%,
+                rgba(255,255,255,0) 100%
+            );
+            backdrop-filter: blur(10px);
+            z-index: 1;
+        }
+
+        &Pink::after {
+            background: radial-gradient(
+                ellipse at center,
+                rgba(255,114,224,0.4) 0%,
+                rgba(255,255,255,0) 100%
+            );
+        }
+
+        &Active {
+            color: black;
+            transform: scale(1.05);
+            transform-origin: 0 0;
+
+            &::after {
+                background: linear-gradient(
+                    45deg,
+                    rgba(255,255,255,1) 0%,
+                    rgba(255,255,255,1) 35%,
+                    #58B9FF 71%,
+                    #4BB7AA 89%
+                );
+            }
+
+            &:nth-child(1) {
+
+                &::after {
+                    background: linear-gradient(
+                        45deg,
+                        rgba(255,255,255,1) 0%,
+                        rgba(255,255,255,1) 35%,
+                        rgba(241,163,71,1) 71%,
+                        rgba(255,114,224,1) 89%
+                    );
+                }
+            }
+
+        }
+
+        &Content {
+            position: relative;
+            z-index: 2;
+        }
+
+        &Number {
+            display: block;
+            font: bold 41px/1 'NeueMachina';
+            margin-bottom: 10px;
+        }
+
+        &Title {
+            font: bold 13px/1.2 'MazzardH';
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        &Text {
+            font: 13px/1.2 'MazzardH';
+        }
+    }
+}
+
+.animatedImages {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    &Item {
+        position: relative;
+
+    }
+
+    &Item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-position: right bottom;
+        background-size: auto 80%;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 0.3s;
+
+        &Active {
+            opacity: 1;
+        }
+    }
+}
