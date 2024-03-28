@@ -34,7 +34,6 @@ const getTypeById = (id: number): TypeArtButton => {
 
 export const ArtMenuItem: React.FC<ArtMenuItemProps> = ({
     id,
-    href,
     image,
     title,
     isOpened,
