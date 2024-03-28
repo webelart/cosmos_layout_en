@@ -41,8 +41,7 @@ export const ArtMenuItem: React.FC<ArtMenuItemProps> = ({
     onClick,
     onClickButton
 }) => (
-    <Link
-        href={href}
+    <div
         onClick={onClick}
         className={cl(
             styles.artMenuItem,
@@ -70,5 +69,5 @@ export const ArtMenuItem: React.FC<ArtMenuItemProps> = ({
             />
         </div>
         <span className={styles.artMenuDecorator} />
-    </Link>
+    </div>
 );

@@ -1,42 +1,21 @@
-$background-color: black;
-$text-color: hsl(0, 0%, 100%);
-
 .title {
-  color: white;
-  font-size: 100px;
-  line-height: 1.2;
-  font-family: 'TTOctosquares', sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  margin-bottom: 60px;
-}
+    text-align: right;
+    display: inline-block;
+    font: bold 15px/1.2em 'MazzardH';
+    text-transform: uppercase;
 
-.slicedTitle {
-  display: grid;
-  font-family: "TTOctosquares", sans-serif;
-  font-size: 100px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: $text-color;
-  position: relative;
-  
-  & > div {
-    grid-area: 1/1/-1/-1;
-  }
+    &Text {
+        background-image: linear-gradient(to right, #FFB800, #FFBAC3);
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+        padding-right: 10px;
+        line-height: 1;
+    }
 
-  &Top {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
-  }
-  &Bottom {
-    position: absolute;
-    clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
-    color: transparent;
-    background: -webkit-linear-gradient(177deg, black 53%, $text-color 65%);
-    background: linear-gradient(177deg, black 53%, $text-color 65%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    top: 0;
-  }
+    &Icon {
+        position: relative;
+        top: -2px;
+    }
 }
 
