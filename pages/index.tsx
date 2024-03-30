@@ -51,7 +51,7 @@ export default function Home() {
         <ArtMenu />
       </section>
       <section className={cl(styles.section, styles.sectionAnimation)}>
-        <ArtTitle type="down" className={styles.artTitle}>Our way</ArtTitle>
+        <ArtTitle type="down" className={styles.artTitle}>Our way</ArtTitle> 
         <Title size="Small" className={styles.smallTitle}>
           Road
           <svg width="39" height="39" viewBox="0 0 39 39" fill="none" style={{marginRight: '0.5rem',}}>
