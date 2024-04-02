@@ -4,7 +4,7 @@ import cl from 'classnames';
 import styles from './style.module.scss';
 
 interface TitleProps {
-    size?: 'Small' | 'Medium' | 'Large',
+    size?: 'Small' | 'X-Medium' | 'Medium' | 'Large',
     children: ReactNode,
     className?: string;
 }

@@ -1,8 +1,20 @@
 .title {
-    text-align: right;
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
     font: bold 15px/1.2em 'MazzardH';
     text-transform: uppercase;
+    text-align: right;
+    gap: 0.1em;
+
+    &Center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .titleText {
+            padding-right: 0;   
+        }
+    }
 
     &Text {
         background-image: linear-gradient(to right, #FFB800, #FFBAC3);
@@ -11,11 +23,6 @@
         display: inline-block;
         padding-right: 10px;
         line-height: 1;
-    }
-
-    &Icon {
-        position: relative;
-        top: -2px;
     }
 }
 

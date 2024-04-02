@@ -9,6 +9,7 @@ import { Navigation } from '../components/Navigation';
 import { Title } from '../components/Title';
 import { ArtTitle } from '../components/ArtTitle';
 import { AnimatedMenu } from '../components/AnimatedMenu';
+import { LogoList } from '../components/LogoList';
 
 export default function Home() {
   return (
@@ -67,6 +68,11 @@ export default function Home() {
           Map
         </Title>
         <AnimatedMenu />
+      </section>
+      <section className={cl(styles.section, styles.sectionDifficultForms)}>
+        <ArtTitle type="up" className={styles.artTitle}>Partners</ArtTitle>
+        <Title size="X-Medium">Collaborations</Title>
+        <LogoList />
       </section>
     </article>
   )

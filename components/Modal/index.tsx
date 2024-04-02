@@ -25,7 +25,6 @@ export const Modal: React.FC<ModalProps> = ({
   scrollContent,
   isNext,
 }) => {
-	
 	useEffect(() => {
 		document.body.classList.add('bodyOverflow');
 
@@ -80,9 +79,7 @@ export const Modal: React.FC<ModalProps> = ({
 					}}
 					className={styles.modalTitle}
 				>{title}</h2>
-				<Text
-					className={styles.modalText}
-				>{text}</Text>
+				<Text className={styles.modalText}>{text}</Text>
 				<div className={styles.modalContent}>
 					{scrollContent}
 				</div>
