@@ -38,7 +38,7 @@ export const Navigation: React.FC<NavigationProps> = () => (
                 >
                     {link.title}
                 </Link>
-                {id < links.length - 1 && (
+                {id < links?.length - 1 && (
                     <span className={styles.navigationStar} />
                 )}
             </Fragment>

@@ -245,7 +245,7 @@ export const ArtMenu: React.FC = () => {
     const nextModalInfo = useMemo<ModalInfo | null>(() => {
         if (!modalInfo) return null;
         let nextModalInfo = null;
-        for (let i = 0; i < links.length; i++) {
+        for (let i = 0; i < links?.length; i++) {
             if (
                 links[i].modalInfo.title === modalInfo.title
                 && links[i + 1]
