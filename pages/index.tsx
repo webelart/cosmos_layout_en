@@ -72,7 +72,7 @@ export default function Home() {
       <section className={cl(styles.section, styles.sectionDifficultForms)}>
         <ArtTitle type="up" className={styles.artTitle}>Partners</ArtTitle>
         <Title size="X-Medium" className={styles.subTitle}>Collaborations</Title>
-        <LogoList />
+        <LogoList className={styles.logoList} />
       </section>
     </article>
   )

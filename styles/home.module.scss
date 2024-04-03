@@ -59,6 +59,8 @@
     }
 
     &DifficultForms {
+        min-height: auto;
+        height: auto;
         background: linear-gradient(
             to bottom,  
             #633e60 0%,
@@ -95,6 +97,10 @@
 }
 
 .subTitle {
-    margin-bottom: 50px;
+    margin-bottom: 50px !important;
+}
+
+.logoList {
+    margin-bottom: 100px;
 }
 

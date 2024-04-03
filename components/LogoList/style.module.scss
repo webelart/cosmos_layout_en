@@ -17,7 +17,6 @@ $size-border: 2px;
         align-items: center;
         justify-content: center;
 
-
         &::after {
             content: '';
             position: absolute;
@@ -52,6 +51,30 @@ $size-border: 2px;
             z-index: 1;
             font: 400 25px/1 'TTOctosquares', sans-serif;
             text-transform: uppercase;
+        }
+
+        &AngleLeft {
+            position: absolute;
+            top: 16px;
+            right: 6px;
+            width: 0;
+            height: 0;
+            z-index: 1;
+            border-top: 15px solid white;
+            border-left: 15px solid transparent;
+            transition: all 0.3s;
+        }
+    
+        &AngleRight {
+            position: absolute;
+            bottom: 7px;
+            left: 7px;
+            width: 0;
+            height: 0;
+            z-index: 1;
+            border-bottom: 15px solid white;
+            border-right: 15px solid transparent;
+            transition: all 0.3s;
         }
     }
 }
