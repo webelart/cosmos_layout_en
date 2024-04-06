@@ -1,0 +1,72 @@
+$size-height: 1.5rem;
+$size-top: 4rem;
+$size-bottom: 6rem;
+$size-border: 2px;
+
+.artObject {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.27);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+
+        clip-path: polygon(
+            0 0,
+            $size-top 0,
+            $size-bottom $size-height,
+            100% $size-height,
+            100% calc(100% - $size-height),
+            100% calc(100% - $size-height),
+            calc(100% - $size-top) calc(100% - $size-height),
+            calc(100% - $size-bottom) 100%,
+            0 100%,
+        );
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        bottom: -2px;
+        right: -2px;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+
+        clip-path: polygon(
+            0 0,
+            $size-top 0,
+            $size-bottom $size-height,
+            100% $size-height,
+            100% calc(100% - $size-height),
+            100% calc(100% - $size-height),
+            calc(100% - $size-top) calc(100% - $size-height),
+            calc(100% - $size-bottom) 100%,
+            0 100%,
+
+            -2px calc(100% - 2px),
+            calc(100% - $size-bottom - 1px) calc(100% - 2px),
+            calc(100% - $size-top - 1px) calc(100% - $size-height - 2px),
+            calc(100% - 2px) calc(100% - $size-height - 2px),
+            calc(100% - 2px) calc(100% - $size-height - 2px),
+            calc(100% - 2px) calc($size-height + 2px),
+            calc($size-bottom + 2px) calc($size-height + 2px),
+            calc($size-top + 2px) -2px,
+            // 2px 2px,
+            // 2px calc(100% + 2px)
+        );
+    }
+
+    &Column {
+        position: relative;
+        z-index: 1;
+    }
+}

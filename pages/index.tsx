@@ -10,6 +10,7 @@ import { Title } from '../components/Title';
 import { ArtTitle } from '../components/ArtTitle';
 import { AnimatedMenu } from '../components/AnimatedMenu';
 import { LogoList } from '../components/LogoList';
+import { ArtObject } from '../components/ArtObject';
 
 export default function Home() {
   return (
@@ -73,6 +74,7 @@ export default function Home() {
         <ArtTitle type="up" className={styles.artTitle}>Partners</ArtTitle>
         <Title size="X-Medium" className={styles.subTitle}>Collaborations</Title>
         <LogoList className={styles.logoList} />
+        <ArtObject />
       </section>
     </article>
   )
