@@ -79,16 +79,16 @@ export const ArtObject: React.FC<ArtObjectProps> = ({
                     </div>
                     <div>
                         <svg width="182" height="37" viewBox="0 0 182 37" fill="none">
-                            <g clip-path="url(#clip0_3523_2389)">
+                            <g clipPath="url(#clip0_3523_2389)">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M0.435092 18.585L18.2578 36.5273L36.0806 18.585L18.4954 18.585L36.0806 0.881868L0.435094 0.881865L18.0203 18.585L0.435092 18.585Z" fill="white"/>
                             </g>
-                            <g clip-path="url(#clip1_3523_2389)">
+                            <g clipPath="url(#clip1_3523_2389)">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M115.481 36.5274L132.963 19.1616L115.481 1.7959L115.481 18.9301L98.2316 1.7959L98.2316 36.5274L115.481 19.3931L115.481 36.5274Z" fill="white"/>
                             </g>
-                            <g clip-path="url(#clip2_3523_2389)">
+                            <g clipPath="url(#clip2_3523_2389)">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M181.405 19.2782L164.039 1.7959L146.673 19.2782L163.807 19.2782L146.673 36.5274L181.405 36.5274L164.27 19.2782L181.405 19.2782Z" fill="white"/>
                             </g>
-                            <g clip-path="url(#clip3_3523_2389)">
+                            <g clipPath="url(#clip3_3523_2389)">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M70.2638 0.881836H63.1347V10.099L56.6171 3.58148L51.5761 8.6225L58.0936 15.14H48.8765V22.2691H58.0936L51.5761 28.7865L56.6171 33.8277L63.1347 27.3101V36.5273H70.2638V27.3101L76.7813 33.8277L81.8223 28.7867L75.3047 22.2691H84.5219V15.14H75.3047L81.8223 8.6225L76.7813 3.58146L70.2638 10.099V0.881836Z" fill="white"/>
                             </g>
                             <defs>
@@ -124,5 +124,16 @@ export const ArtObject: React.FC<ArtObjectProps> = ({
                 </div>
             </div>
         </div>
+        <div className={styles.borders}>
+            <i />
+            <i />
+            <i />
+            <i />
+            <i />
+            <i />
+            <i />
+            <i />
+        </div>
+        
     </div>
 );
