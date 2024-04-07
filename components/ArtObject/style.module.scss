@@ -5,6 +5,8 @@ $size-border: 2px;
 
 .artObject {
     position: relative;
+    max-width: 1222px;
+    margin: 0 auto;
 
     &::after {
         content: '';
@@ -43,8 +45,8 @@ $size-border: 2px;
 
         clip-path: polygon(
             0 0,
-            $size-top 0,
-            $size-bottom $size-height,
+            calc($size-top + 3px) 0,
+            calc($size-bottom + 3px)  calc($size-height),
             100% $size-height,
             100% calc(100% - $size-height),
             100% calc(100% - $size-height),
@@ -59,9 +61,10 @@ $size-border: 2px;
             calc(100% - 2px) calc(100% - $size-height - 2px),
             calc(100% - 2px) calc($size-height + 2px),
             calc($size-bottom + 2px) calc($size-height + 2px),
-            calc($size-top + 2px) -2px,
-            // 2px 2px,
-            // 2px calc(100% + 2px)
+            calc($size-top + 2px) 2px,
+            2px 2px,
+            2px 100%,
+            2px calc(100% + 2px),
         );
     }
 

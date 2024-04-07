@@ -5,7 +5,7 @@
     min-height: 600px;
 
     &Main {
-        background: url('/bg/screen_1_bg.jpg') center no-repeat no-repeat;
+        background: url('/bg/screen_1_bg.jpg') center no-repeat;
 
         &::before {
             content: '';
@@ -20,7 +20,7 @@
     }
 
     &Earth {
-        background: url('/bg/screen_2_bg.jpg') center no-repeat no-repeat;
+        background: url('/bg/screen_2_bg.jpg') center no-repeat;
     }
 
     &Main,
@@ -58,15 +58,45 @@
         }
     }
 
-    &DifficultForms {
+    &Logos {
         min-height: auto;
         height: auto;
         background: linear-gradient(
             to bottom,  
             #633e60 0%,
-            #705451 10%,
+            #705451 50%,
             #32344B 100%
         );  
+    }
+
+    &DifficultForms {
+        background: linear-gradient(
+            to bottom,
+            #32344B 0%,
+            #4B3961 50%,
+            #4D2A32 100%
+        );  
+        position: relative;
+        height: auto;
+        padding-bottom: 15rem;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: url('/bg/screen_art_object.png') center top no-repeat;
+            background-size: 100% auto;
+            z-index: 1;
+            opacity: 0.7;
+        }
+    }
+
+    &Content {
+        position: relative;
+        z-index: 2;
     }
 }
 
@@ -102,5 +132,11 @@
 
 .logoList {
     margin-bottom: 100px;
+}
+
+.superStar {
+    padding: 0 18px 0 11px;
+    position: relative;
+    top: 4px;
 }
 
