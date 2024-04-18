@@ -11,6 +11,7 @@ import { ArtTitle } from '../components/ArtTitle';
 import { AnimatedMenu } from '../components/AnimatedMenu';
 import { LogoList } from '../components/LogoList';
 import { ArtObject } from '../components/ArtObject';
+import { AlliesGallery } from '../components/AlliesGallery';
 
 export default function Home() {
   return (
@@ -90,6 +91,20 @@ export default function Home() {
           </Title>
           <ArtObject />
         </div>
+      </section>
+      <section className={cl(styles.section, styles.sectionAlliesGallery)}>
+        <ArtTitle type="up" className={styles.artTitle}>Members</ArtTitle>
+        <Title size="X-Medium" className={styles.subTitle}>
+          Meet
+          <br />
+          our
+          <svg width="72" height="44" fill="none" className={styles.superEye}>
+            <path fill="#fff" d="M36.592.5C25.106.5 17.916 8.833 17.916 22.084s7.19 21.554 18.676 21.554c11.487 0 18.676-8.304 18.676-21.554C55.268 8.833 48.078.5 36.592.5m0 4.803c8.285 0 13.48 6.48 13.48 16.78 0 10.271-5.195 16.752-13.48 16.752s-13.48-6.48-13.48-16.751c0-10.3 5.195-16.781 13.48-16.781"/>
+            <path fill="#fff" fillRule="evenodd" d="M7.04 19.947c2.734 2.995 6.866 7.178 11.637 10.86 5.928 4.575 12.39 8.017 18.161 8.017 5.712 0 11.53-3.387 16.794-7.928 4.29-3.7 7.902-7.887 10.494-10.946-2.844-2.831-6.843-6.185-11.285-8.99-5.396-3.407-11.097-5.784-16.003-5.784-4.954 0-11.305 2.413-17.366 5.847-4.97 2.816-9.45 6.148-12.432 8.924m9.88-13.428C23.21 2.956 30.52 0 36.838 0c6.368 0 13.08 2.992 18.767 6.583 5.744 3.628 10.796 8.093 13.917 11.516l1.54 1.689-1.485 1.737q-.45.527-.986 1.163c-2.6 3.077-6.676 7.9-11.578 12.128C51.498 39.574 44.47 44 36.838 44c-7.571 0-15.201-4.37-21.323-9.095C9.298 30.108 4.166 24.573 1.527 21.543L0 19.79l1.58-1.706c3.244-3.501 8.995-7.97 15.34-11.565" clipRule="evenodd"/>
+          </svg>
+          team
+        </Title>
+        <AlliesGallery />
       </section>
     </article>
   )
