@@ -1,7 +1,5 @@
-import { useRef, useState, useEffect } from 'react';
+import { useState } from 'react';
 import cl from 'classnames';
-
-import { useUpdateActiveIndex } from './hooks/useUpdateActiveIndex';
 
 import styles from './style.module.scss';
 
@@ -94,37 +92,15 @@ export const AlliesGallery: React.FC<AlliesGalleryProps> = ({
     className
 }) => {
     const [ activeIndex, setActiveIndex ] = useState(0);
-    const containerRef = useRef<HTMLDivElement>(null);
-    const scrollActiveIndex = useUpdateActiveIndex(containerRef);
-
-    useEffect(() => {
-        setActiveIndex(scrollActiveIndex)
-    }, [ scrollActiveIndex ]);
-
-    const move = (newActiveElement: number) => {
-        const currentNode = containerRef?.current;
-        const firstElementData = currentNode?.firstElementChild?.getBoundingClientRect();
-    
-        if (!currentNode || !firstElementData) {
-          return;
-        }
-
-        setActiveIndex(newActiveElement);
-    
-        currentNode.scrollTo({
-          left: newActiveElement * firstElementData?.width,
-          behavior: 'smooth',
-        });
-    }
 
     return (
         <div className={cl(className, styles.alliesGallery)}>
-            <div className={styles.alliesContainer} ref={containerRef}>
+            <div className={styles.alliesContainer}>
                 {items.map((item, index) => (
                     <div
                         className={cl(styles.alliesItem, activeIndex === index && styles.alliesItemActive)}
                         key={item.id}
-                        onClick={() => move(index)}
+                        onClick={() => setActiveIndex(index)}
                     >
                         <div className={styles.alliesItemContainer}>
                             <div className={styles.alliesImageContainer}>
