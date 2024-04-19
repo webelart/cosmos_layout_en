@@ -5,7 +5,7 @@ $size-border: 2px;
 
 .allies {
     &Gallery {
-        
+        position: relative;
     }
 
     &Container {
@@ -16,6 +16,7 @@ $size-border: 2px;
         scroll-snap-type: x mandatory;
         padding-left: 30px;
         margin-right: -6.8571rem;
+        align-items: flex-start;
 
         &::-webkit-scrollbar {
             display: none;
@@ -34,6 +35,9 @@ $size-border: 2px;
         padding: 20px 10px;
         scroll-snap-align: start;
         scroll-snap-stop: always;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 14px;
 
         &Container {
             position: relative;
@@ -62,31 +66,66 @@ $size-border: 2px;
                 0 100%,
             );
             background: linear-gradient(-135deg,
-             rgba(230,118,178,1) 0%,
-             rgba(231,143,129,0.66) 13%,
-             rgba(231,143,129,0.5) 38%,
-             rgba(231,143,129,0.3) 57%,
-             rgba(255,255,255,0.1) 100%);
+            rgba(230, 118, 178, 1) 0%,
+            rgba(231, 143, 129, 1) 5%,
+            rgba(255, 255, 255, 0.5) 20%,
+            rgba(255, 255, 255, 0.2) 100%);
             backdrop-filter: blur(5px);
+            transition: all 0.3s;
+        }
+
+        &Active {
+            &::after {
+                background: linear-gradient(-135deg,
+                rgba(230, 118, 178, 1) 0%,
+                rgba(231, 143, 129, 1) 5%,
+                rgba(255, 255, 255, 1) 20%,
+                rgba(255, 255, 255, 1) 100%);
+            }
+
+            width: 30%;
+            min-width: 30%;
+            color: black;
+            font-size: 18px;
         }
     }
 
-    &Image {
+    &ImageContainer {
+        position: relative;
         width: 100%;
-        margin-bottom: 12px;
+        padding-bottom: 132%;
+        margin-bottom: 1em;
+        overflow: hidden;
+    }
+
+    &Image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
     }
 
     &Position {
-        font: 400 10px/1.2 'MazzardH';
+        font: 400 0.9em/1.2 'MazzardH';
         margin-bottom: 4px;
     }
 
     &Title {
-        font: 400 21px/1 'TTOctosquares', sans-serif;
+        font: 400 1.3em/1 'TTOctosquares', sans-serif;
         text-transform: uppercase;
     }
 
     &Description {
         display: none;
     }
+}
+
+.dragDragDrag {
+    position: absolute;
+    pointer-events: none;
+    width: 10vw;
+    height: 10vw;
+    right: 5vw;
+    top: 11vw;
+    z-index: 3;
 }
