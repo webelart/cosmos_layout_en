@@ -5,6 +5,7 @@ $size-bottom: 4.5rem;
 $size-height-large: 0.7rem;
 $size-top-large: 4rem;
 $size-bottom-large: 5.3rem;
+$size-border: 2px;
 
 .allies {
     &Gallery {
@@ -132,7 +133,79 @@ $size-bottom-large: 5.3rem;
     }
 
     &Description {
-        display: none;
+        opacity: 0;
+        position: absolute;
+        bottom: 0;
+        color: white;
+        padding: 30px 50px 40px;
+        transition: transform 0.3s, opacity 0.3s;
+        transform: scaleX(0);
+        width: 30vw;
+        transform-origin: 0 center;
+        right: -35vw;
+
+        strong {
+            font-weight: bold;
+        }
+    }
+}
+
+.alliesItemActive {
+    .alliesDescription {
+        opacity: 1;
+        position: absolute;
+        bottom: $size-height;
+        z-index: 0;
+        transform: scaleX(1);
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to left, rgb(244, 187, 66, 0.3) 0%,rgb(245, 189, 196, 0.3) 100%);
+            backdrop-filter: blur(10px);
+            clip-path: polygon(
+                0 0,
+                0 100%,
+                calc(100% - 40px) 100%,
+                100% calc(100% - 40px),
+                100% 0,
+            );
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(to left, rgb(244, 187, 66, 1) 0%,rgb(245, 189, 196,1) 100%);
+            clip-path: polygon(
+                0 0,
+                0 100%,
+                calc(100% - 40px) 100%,
+                100% calc(100% - 40px),
+                100% 0,
+
+                calc(100% - 2px) -2px,
+                calc(100% - 2px) calc(100% - 40px - 1px),
+                calc(100% - 40px - 1px) calc(100% - 2px),
+                2px calc(100% - 2px),
+                2px 2px,
+                calc(100% + 2px) 2px,
+                100% 0,
+            );
+        }
+
+        & > * {
+            position: relative;
+            z-index: 1;
+        }
     }
 }
 

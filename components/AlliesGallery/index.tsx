@@ -111,10 +111,9 @@ export const AlliesGallery: React.FC<AlliesGalleryProps> = ({
                             </div>
                             <div className={styles.alliesPosition}>{item.position}</div>
                             <h4 className={styles.alliesTitle}>{item.title}</h4>
-                            <p
-                                className={styles.alliesDescription}
-                                dangerouslySetInnerHTML={{__html: item.description}}
-                            />
+                        </div>
+                        <div className={styles.alliesDescription}>
+                            <p dangerouslySetInnerHTML={{__html: item.description}} />
                         </div>
                     </div>
                 ))}
