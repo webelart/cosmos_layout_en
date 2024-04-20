@@ -12,6 +12,7 @@ import { AnimatedMenu } from '../components/AnimatedMenu';
 import { LogoList } from '../components/LogoList';
 import { ArtObject } from '../components/ArtObject';
 import { AlliesGallery } from '../components/AlliesGallery';
+import { Copyright } from '../components/Copyright';
 
 export default function Home() {
   return (
@@ -105,6 +106,11 @@ export default function Home() {
           team
         </Title>
         <AlliesGallery />
+      </section>
+      <section className={cl(styles.section, styles.sectionFooter)}>
+          <Logo />
+          <SocialNetworks type="footer" />
+          <Copyright className={styles.copyright} />
       </section>
     </article>
   )

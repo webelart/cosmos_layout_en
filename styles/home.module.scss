@@ -140,6 +140,21 @@
             left: 0;
         }
     }
+
+    &Footer {
+        padding-top: 80px;
+        padding-bottom: 76px;
+        height: auto;
+        min-height: auto;
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+        align-items: center;
+        gap: 8vw;
+
+        .copyright {
+            text-align: right;
+        }
+    }
 }
 
 .header {

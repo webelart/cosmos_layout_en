@@ -2,7 +2,10 @@ import cl from 'classnames';
 
 import styles from './style.module.scss';
 
-interface SocialNetworksProps {}
+interface SocialNetworksProps {
+    type?: 'header' | 'footer';
+    className?: string;
+}
 
 const socialNetworks = [
     {
@@ -25,8 +28,11 @@ const socialNetworks = [
     }
 ];
 
-export const SocialNetworks: React.FC<SocialNetworksProps> = () => (
-    <ul className={styles.socialNetworks}>
+export const SocialNetworks: React.FC<SocialNetworksProps> = ({
+    type = 'header',
+    className,
+}) => (
+    <ul className={cl(styles.socialNetworks, className, styles[type])}>
         {socialNetworks.map((socialNetwork) => (
             <li key={socialNetwork.id}>
                 <a
