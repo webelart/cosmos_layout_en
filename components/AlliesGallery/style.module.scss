@@ -147,6 +147,13 @@ $size-border: 2px;
         strong {
             font-weight: bold;
         }
+
+        &Star {
+            position: absolute;
+            top: -16px;
+            right: 10%;
+            z-index: 2;
+        }
     }
 }
 
@@ -202,7 +209,7 @@ $size-border: 2px;
             );
         }
 
-        & > * {
+        p {
             position: relative;
             z-index: 1;
         }
